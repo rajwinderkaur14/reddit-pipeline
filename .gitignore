@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+.venv/
+
+# Data files (too large for Git)
+data/
+*.parquet
+*.csv
+
+# Secrets
+*.pem
+*.key
+secrets/
+
+# Mac
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
