@@ -1,0 +1,15 @@
+[2026-05-15T09:32:40.847+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T09:27:09.562194+00:00 [queued]>
+[2026-05-15T09:32:40.851+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T09:27:09.562194+00:00 [queued]>
+[2026-05-15T09:32:40.851+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T09:32:40.857+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): spark_clean_and_features> on 2026-05-15 09:27:09.562194+00:00
+[2026-05-15T09:32:40.860+0000] {standard_task_runner.py:60} INFO - Started process 293 to run task
+[2026-05-15T09:32:40.862+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hn_pipeline', 'spark_clean_and_features', 'manual__2026-05-15T09:27:09.562194+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/hn_pipeline_dag.py', '--cfg-path', '/tmp/tmpm4yy6sy7']
+[2026-05-15T09:32:40.863+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask spark_clean_and_features
+[2026-05-15T09:32:40.890+0000] {task_command.py:423} INFO - Running <TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T09:27:09.562194+00:00 [running]> on host d00d39f74813
+[2026-05-15T09:32:40.935+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rajwinder' AIRFLOW_CTX_DAG_ID='hn_pipeline' AIRFLOW_CTX_TASK_ID='spark_clean_and_features' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T09:27:09.562194+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-15T09:27:09.562194+00:00'
+[2026-05-15T09:32:40.937+0000] {logging_mixin.py:188} INFO - ✓ Delta Lake has 2 parquet files
+[2026-05-15T09:32:40.938+0000] {logging_mixin.py:188} INFO - ✓ Spark output verified at /opt/***/data/processed/hn_stories_delta
+[2026-05-15T09:32:40.938+0000] {python.py:201} INFO - Done. Returned value was: Delta Lake verified: 2 files
+[2026-05-15T09:32:40.949+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=hn_pipeline, task_id=spark_clean_and_features, execution_date=20260515T092709, start_date=20260515T093240, end_date=20260515T093240
+[2026-05-15T09:32:40.997+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T09:32:41.012+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

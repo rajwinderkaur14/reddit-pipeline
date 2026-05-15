@@ -1,0 +1,28 @@
+[2026-05-15T05:26:41.739+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T05:17:24.654635+00:00 [queued]>
+[2026-05-15T05:26:41.744+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T05:17:24.654635+00:00 [queued]>
+[2026-05-15T05:26:41.745+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2026-05-15T05:26:41.750+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): spark_clean_and_features> on 2026-05-15 05:17:24.654635+00:00
+[2026-05-15T05:26:41.755+0000] {standard_task_runner.py:60} INFO - Started process 297 to run task
+[2026-05-15T05:26:41.760+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hn_pipeline', 'spark_clean_and_features', 'manual__2026-05-15T05:17:24.654635+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/hn_pipeline_dag.py', '--cfg-path', '/tmp/tmp323daxow']
+[2026-05-15T05:26:41.764+0000] {standard_task_runner.py:88} INFO - Job 7: Subtask spark_clean_and_features
+[2026-05-15T05:26:41.795+0000] {task_command.py:423} INFO - Running <TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T05:17:24.654635+00:00 [running]> on host c6bb54e14902
+[2026-05-15T05:26:41.832+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rajwinder' AIRFLOW_CTX_DAG_ID='hn_pipeline' AIRFLOW_CTX_TASK_ID='spark_clean_and_features' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T05:17:24.654635+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-15T05:17:24.654635+00:00'
+[2026-05-15T05:26:41.834+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-15T05:26:41.834+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/*** &&             python3 spark_jobs/clean_and_feature_engineer.py\n        ']
+[2026-05-15T05:26:41.843+0000] {subprocess.py:86} INFO - Output:
+[2026-05-15T05:26:41.859+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-15T05:26:41.860+0000] {subprocess.py:93} INFO -   File "spark_jobs/clean_and_feature_engineer.py", line 4, in <module>
+[2026-05-15T05:26:41.860+0000] {subprocess.py:93} INFO -     from pyspark.sql import SparkSession
+[2026-05-15T05:26:41.860+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'pyspark'
+[2026-05-15T05:26:41.861+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-15T05:26:41.870+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-15T05:26:41.872+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=hn_pipeline, task_id=spark_clean_and_features, execution_date=20260515T051724, start_date=20260515T052641, end_date=20260515T052641
+[2026-05-15T05:26:41.880+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 7 for task spark_clean_and_features (Bash command failed. The command returned a non-zero exit code 1.; 297)
+[2026-05-15T05:26:41.896+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-15T05:26:41.910+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

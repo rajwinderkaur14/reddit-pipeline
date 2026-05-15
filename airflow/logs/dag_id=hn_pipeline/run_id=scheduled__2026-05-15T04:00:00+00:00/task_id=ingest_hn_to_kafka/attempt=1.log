@@ -1,0 +1,146 @@
+[2026-05-15T05:17:10.865+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hn_pipeline.ingest_hn_to_kafka scheduled__2026-05-15T04:00:00+00:00 [queued]>
+[2026-05-15T05:17:10.916+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hn_pipeline.ingest_hn_to_kafka scheduled__2026-05-15T04:00:00+00:00 [queued]>
+[2026-05-15T05:17:10.919+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T05:17:11.017+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ingest_hn_to_kafka> on 2026-05-15 04:00:00+00:00
+[2026-05-15T05:17:11.049+0000] {standard_task_runner.py:60} INFO - Started process 186 to run task
+[2026-05-15T05:17:11.112+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hn_pipeline', 'ingest_hn_to_kafka', 'scheduled__2026-05-15T04:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/hn_pipeline_dag.py', '--cfg-path', '/tmp/tmp3580dbjv']
+[2026-05-15T05:17:11.149+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask ingest_hn_to_kafka
+[2026-05-15T05:17:20.978+0000] {task_command.py:423} INFO - Running <TaskInstance: hn_pipeline.ingest_hn_to_kafka scheduled__2026-05-15T04:00:00+00:00 [running]> on host c6bb54e14902
+[2026-05-15T05:17:24.684+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rajwinder' AIRFLOW_CTX_DAG_ID='hn_pipeline' AIRFLOW_CTX_TASK_ID='ingest_hn_to_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-15T04:00:00+00:00'
+[2026-05-15T05:17:24.997+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:17:25.965+0000] {client_async.py:794} WARNING - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <checking_api_versions_recv> [IPv4 ('172.18.0.4', 29092)]> timed out after 500.0 ms. Closing connection.
+[2026-05-15T05:17:26.213+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <checking_api_versions_recv> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. [Error 7] RequestTimedOutError: Request timed out after 500.0 ms
+[2026-05-15T05:17:26.407+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:17:26.416+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <checking_api_versions_recv> [IPv4 ('172.18.0.4', 29092)]>: Broker version identified as 2.6
+[2026-05-15T05:17:26.417+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2026-05-15T05:17:27.283+0000] {hn_pipeline_dag.py:64} INFO - Fetched 200 story IDs from HackerNews
+[2026-05-15T05:17:29.281+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:17:29.284+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2026-05-15T05:17:29.286+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2026-05-15T05:17:29.332+0000] {cluster.py:315} WARNING - Topic hn-posts is not available during auto-create initialization
+[2026-05-15T05:19:40.047+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: Socket EVENT_READ without in-flight-requests
+[2026-05-15T05:19:40.056+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:40.075+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:19:40.081+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-05-15T05:19:40.088+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-05-15T05:19:40.098+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:40.211+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:40.212+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:40.212+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:40.213+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:40.432+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:40.433+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:40.433+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:40.434+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:40.784+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:40.785+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:40.785+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:40.785+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:41.555+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:41.556+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:41.556+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:41.557+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:42.944+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:42.946+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:42.946+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:42.947+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:46.498+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:46.498+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:46.498+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:46.499+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:19:52.970+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:19:52.971+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:19:52.972+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:19:52.972+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:20:05.878+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:20:05.878+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:20:05.878+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:20:05.879+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:20:34.707+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:20:34.710+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:20:34.710+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:20:34.711+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:21:05.011+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:21:05.014+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:21:05.016+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:21:05.017+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:21:39.613+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:21:39.616+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:21:39.617+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:21:39.618+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:21:41.004+0000] {producer_batch.py:137} WARNING - Failed to produce messages to topic-partition ('hn-posts', 0) with base offset None: KafkaTimeoutError: Expiring 47 record(s) for TopicPartition(topic='hn-posts', partition=0): 120012 ms has passed since batch creation
+[2026-05-15T05:21:41.006+0000] {hn_pipeline_dag.py:88} INFO - Ingestion complete. Sent 199 stories to Kafka topic 'hn-posts'
+[2026-05-15T05:21:41.008+0000] {python.py:201} INFO - Done. Returned value was: 199
+[2026-05-15T05:21:41.045+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=hn_pipeline, task_id=ingest_hn_to_kafka, execution_date=20260515T040000, start_date=20260515T051710, end_date=20260515T052141
+[2026-05-15T05:21:41.088+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T05:21:41.102+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-05-15T05:38:04.100+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hn_pipeline.ingest_hn_to_kafka scheduled__2026-05-15T04:00:00+00:00 [queued]>
+[2026-05-15T05:38:04.112+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hn_pipeline.ingest_hn_to_kafka scheduled__2026-05-15T04:00:00+00:00 [queued]>
+[2026-05-15T05:38:04.113+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-05-15T05:38:04.126+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): ingest_hn_to_kafka> on 2026-05-15 04:00:00+00:00
+[2026-05-15T05:38:04.130+0000] {standard_task_runner.py:60} INFO - Started process 200 to run task
+[2026-05-15T05:38:04.133+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hn_pipeline', 'ingest_hn_to_kafka', 'scheduled__2026-05-15T04:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/hn_pipeline_dag.py', '--cfg-path', '/tmp/tmp_imwo2ks']
+[2026-05-15T05:38:04.134+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask ingest_hn_to_kafka
+[2026-05-15T05:38:04.168+0000] {task_command.py:423} INFO - Running <TaskInstance: hn_pipeline.ingest_hn_to_kafka scheduled__2026-05-15T04:00:00+00:00 [running]> on host b2a1a841707d
+[2026-05-15T05:38:04.226+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rajwinder' AIRFLOW_CTX_DAG_ID='hn_pipeline' AIRFLOW_CTX_TASK_ID='ingest_hn_to_kafka' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T04:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-15T04:00:00+00:00'
+[2026-05-15T05:38:04.400+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:38:04.409+0000] {conn.py:622} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <checking_api_versions_recv> [IPv4 ('172.18.0.4', 29092)]>: Broker version identified as 2.6
+[2026-05-15T05:38:04.410+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2026-05-15T05:38:05.287+0000] {hn_pipeline_dag.py:64} INFO - Fetched 200 story IDs from HackerNews
+[2026-05-15T05:38:06.096+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:38:06.098+0000] {conn.py:461} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2026-05-15T05:38:06.098+0000] {conn.py:951} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2026-05-15T05:38:06.137+0000] {cluster.py:315} WARNING - Topic hn-posts is not available during auto-create initialization
+[2026-05-15T05:40:03.361+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: Socket EVENT_READ without in-flight-requests
+[2026-05-15T05:40:03.384+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:40:03.389+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:40:03.390+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connect attempt returned error 111. Disconnecting.
+[2026-05-15T05:40:03.390+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: 111 ECONNREFUSED
+[2026-05-15T05:40:03.391+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:40:03.479+0000] {conn.py:400} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2026-05-15T05:41:14.535+0000] {conn.py:433} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connect attempt returned error 113. Disconnecting.
+[2026-05-15T05:41:14.535+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: 113 EHOSTUNREACH
+[2026-05-15T05:41:14.536+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:14.538+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:14.538+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:14.538+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:14.538+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:14.958+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:14.960+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:14.961+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:14.961+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:15.627+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:15.629+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:15.630+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:15.631+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:17.033+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:17.035+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:17.036+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:17.037+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:20.859+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:20.861+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:20.862+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:20.864+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:28.153+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:28.155+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:28.155+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:28.156+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:41:41.508+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:41:41.512+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:41:41.515+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:41:41.516+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:42:03.768+0000] {producer_batch.py:137} WARNING - Failed to produce messages to topic-partition ('hn-posts', 0) with base offset None: KafkaTimeoutError: Expiring 54 record(s) for TopicPartition(topic='hn-posts', partition=0): 120027 ms has passed since batch creation
+[2026-05-15T05:42:05.176+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:42:05.178+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:42:05.178+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:42:05.179+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:42:33.953+0000] {conn.py:1530} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2026-05-15T05:42:33.955+0000] {conn.py:323} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: DNS lookup failed for kafka:29092 (0)
+[2026-05-15T05:42:33.955+0000] {conn.py:951} ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. KafkaConnectionError: DNS failure
+[2026-05-15T05:42:33.956+0000] {client_async.py:388} WARNING - Node 1 connection failed -- refreshing metadata
+[2026-05-15T05:42:52.405+0000] {producer_batch.py:137} WARNING - Failed to produce messages to topic-partition ('hn-posts', 0) with base offset None: KafkaTimeoutError: Expiring 16 record(s) for TopicPartition(topic='hn-posts', partition=0): 120018 ms has passed since batch creation
+[2026-05-15T05:42:52.407+0000] {hn_pipeline_dag.py:88} INFO - Ingestion complete. Sent 199 stories to Kafka topic 'hn-posts'
+[2026-05-15T05:42:52.409+0000] {python.py:201} INFO - Done. Returned value was: 199
+[2026-05-15T05:42:52.434+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=hn_pipeline, task_id=ingest_hn_to_kafka, execution_date=20260515T040000, start_date=20260515T053804, end_date=20260515T054252
+[2026-05-15T05:42:52.455+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-15T05:42:52.469+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

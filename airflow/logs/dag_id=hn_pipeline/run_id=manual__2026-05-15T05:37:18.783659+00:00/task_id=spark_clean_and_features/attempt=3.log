@@ -1,0 +1,30 @@
+[2026-05-15T05:54:00.144+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T05:37:18.783659+00:00 [queued]>
+[2026-05-15T05:54:00.148+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T05:37:18.783659+00:00 [queued]>
+[2026-05-15T05:54:00.148+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 4
+[2026-05-15T05:54:00.154+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): spark_clean_and_features> on 2026-05-15 05:37:18.783659+00:00
+[2026-05-15T05:54:00.157+0000] {standard_task_runner.py:60} INFO - Started process 372 to run task
+[2026-05-15T05:54:00.159+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hn_pipeline', 'spark_clean_and_features', 'manual__2026-05-15T05:37:18.783659+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/hn_pipeline_dag.py', '--cfg-path', '/tmp/tmpzvoyxx4o']
+[2026-05-15T05:54:00.160+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask spark_clean_and_features
+[2026-05-15T05:54:00.186+0000] {task_command.py:423} INFO - Running <TaskInstance: hn_pipeline.spark_clean_and_features manual__2026-05-15T05:37:18.783659+00:00 [running]> on host b2a1a841707d
+[2026-05-15T05:54:00.223+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='rajwinder' AIRFLOW_CTX_DAG_ID='hn_pipeline' AIRFLOW_CTX_TASK_ID='spark_clean_and_features' AIRFLOW_CTX_EXECUTION_DATE='2026-05-15T05:37:18.783659+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-15T05:37:18.783659+00:00'
+[2026-05-15T05:54:00.227+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/hn_pipeline_dag.py", line 129, in run_spark_job
+    result = subprocess.run(
+  File "/usr/local/lib/python3.8/subprocess.py", line 493, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/usr/local/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/local/lib/python3.8/subprocess.py", line 1720, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/rajwinder/Documents/pipeline/venv/bin/python3'
+[2026-05-15T05:54:00.234+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=hn_pipeline, task_id=spark_clean_and_features, execution_date=20260515T053718, start_date=20260515T055400, end_date=20260515T055400
+[2026-05-15T05:54:00.239+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 8 for task spark_clean_and_features ([Errno 2] No such file or directory: '/Users/rajwinder/Documents/pipeline/venv/bin/python3'; 372)
+[2026-05-15T05:54:00.252+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-15T05:54:00.263+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
